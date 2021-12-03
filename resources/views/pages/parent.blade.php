@@ -76,6 +76,9 @@
         </nav>
 
         <main class="py-4">
+            <a class="btn btn-link" href="{{ route('pages.main') }}">Pages</a>
+            <a class="btn btn-link" href="{{ route('pages.aboutus') }}">About Us</a>
+            <a class="btn btn-link" href="{{ route('pages.contacts') }}">Contact Us</a>
             @yield('content')
         </main>
     </div>

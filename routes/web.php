@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,17 @@ Route::prefix('pages')->group(function(){
     Route::get('/about-us', [PagesController::class, 'aboutUs'])->name('pages.aboutus');
     // route('pages.aboutus')
 });
+
+Route::prefix('posts')->group(function(){
+    Route::get('/', [PostController::class, 'index'])
+    ->name('posts.main');
+
+    Route::get('/show/{id}', [PostController::class, 'show'])->name('posts.show');
+
+    Route::get('/test-db', [PostController::class, 'testDB']);
+
+});
+
 
 // Route::get('/', function () {
 //     return view('welcome', [

@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Custom\Test;
 
 class PagesController extends Controller
 {
     public function welcome(){
-        return view('pages.welcome');
+        $test = new Test();
+        
+        return view('pages.welcome', ['testdata' => $test->hello()]);
     }
 
     public function contacts(){
